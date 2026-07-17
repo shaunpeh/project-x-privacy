@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policies</title>
+<style>
+:root {
+  --paper:#DCE0DE; --surface:#FFFFFF; --ink:#15191A; --muted:#6B7371;
+  --rule:#C2C8C5; --signal:#1F5F4B; --alert:#9B2C1E;
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --ui: system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#0D1011; --surface:#171B1C; --ink:#E4E9E7; --muted:#8B9491;
+          --rule:#2C3335; --signal:#58A88C; --alert:#D2705E; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--ui);
+       line-height:1.6; padding: clamp(24px,5vw,64px) clamp(16px,4vw,32px) 64px; }
+.wrap { max-width: 720px; margin:0 auto; }
+a { color: var(--ink); text-underline-offset: 2px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+           text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+h1 { font-family:var(--serif); font-weight:400; font-size:clamp(30px,5vw,44px);
+     line-height:1.08; letter-spacing:-.015em; margin:0 0 6px; text-wrap:balance; }
+.tagline { margin:0 0 28px; color:var(--muted); font-size:15px; }
+h2 { font-family:var(--serif); font-weight:400; font-size:22px; margin:34px 0 10px;
+     padding-top:20px; border-top:1px solid var(--rule); }
+h2:first-of-type { border-top:0; padding-top:0; }
+p, li { font-size:15px; }
+ul { padding-left:20px; }
+li { margin-bottom:7px; }
+code { font-family:var(--mono); font-size:.88em; background:var(--surface);
+       padding:1px 4px; border-radius:3px; }
+@media (prefers-color-scheme: dark) { code { background:#22282A; } }
+.headline { border:1px solid var(--signal); color:var(--signal); padding:14px 16px;
+            border-radius:2px; margin:0 0 28px; font-size:15px; }
+.headline strong { font-weight:600; }
+.warn { border-left:3px solid var(--alert); padding:2px 0 2px 16px; margin:16px 0; }
+.warn h3 { margin:0 0 6px; font-size:15px; }
+table { width:100%; border-collapse:collapse; margin:10px 0; }
+th, td { text-align:left; padding:8px 10px 8px 0; border-bottom:1px solid var(--rule);
+         vertical-align:top; font-size:14px; }
+th { font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+     color:var(--muted); font-weight:400; }
+td:first-child { font-family:var(--mono); font-size:12px; white-space:nowrap; padding-right:16px; }
+.foot { margin-top:44px; padding-top:20px; border-top:1px solid var(--rule);
+        font-size:13px; color:var(--muted); }
+.index-list { list-style:none; padding:0; margin:24px 0 0; }
+.index-list li { margin:0; border-top:1px solid var(--rule); }
+.index-list a { display:flex; justify-content:space-between; gap:16px; align-items:baseline;
+                padding:12px 0; text-decoration:none; }
+.index-list a:hover .n { text-decoration:underline; }
+.n { font-size:16px; }
+.t { color:var(--muted); font-size:13px; text-align:right; }
+</style>
+</head>
+<body><div class="wrap">
+
+<p class="eyebrow">Privacy policies</p>
+<h1>None of these extensions have a server.</h1>
+<p class="tagline">Which makes most of this document short.</p>
+
+<div class="headline">
+  <strong>Nine of the ten make no network requests at all.</strong>
+  The tenth, Broken Link Checker, contacts the sites you ask it to check — because that is
+  the only way to find out whether a link is dead. None of them send anything to us.
+</div>
+
+<p>Every one of these tools does its work on your machine. There is no account to create, no
+data to sync, and no analytics. Three of them store nothing at all; the rest keep only what
+they need, in your browser, where you can delete it by uninstalling.</p>
+
+<p>Each policy below says exactly what that tool keeps, what it never touches, and why it asks
+for each permission — in plain words rather than the usual defensive fog.</p>
+
+<ul class="index-list">
+<li><a href="./broken-link-checker.html">
+      <span class="n">Broken Link Checker</span><span class="t">Find dead links on any page in one click.</span></a></li>
+<li><a href="./dyslexia-font-swap.html">
+      <span class="n">Dyslexia Font Swap</span><span class="t">Read every page in a dyslexia-friendly font.</span></a></li>
+<li><a href="./tab-time-tracker.html">
+      <span class="n">Tab Time Tracker</span><span class="t">See where your browser time actually goes.</span></a></li>
+<li><a href="./text-snippets.html">
+      <span class="n">Text Snippets</span><span class="t">Type a short trigger, get the whole paragraph.</span></a></li>
+<li><a href="./form-autosave.html">
+      <span class="n">Form Autosave</span><span class="t">Never lose a long form again.</span></a></li>
+<li><a href="./highlight-markdown.html">
+      <span class="n">Highlight to Markdown</span><span class="t">Right-click any quote. Get clean Markdown with the source link.</span></a></li>
+<li><a href="./consent-auditor.html">
+      <span class="n">Consent Auditor</span><span class="t">See which third parties a page contacts before anyone agrees to anything.</span></a></li>
+<li><a href="./font-licence-auditor.html">
+      <span class="n">Font Licence Auditor</span><span class="t">Which foundry owns the fonts on this page.</span></a></li>
+<li><a href="./evidence-capture.html">
+      <span class="n">Evidence Capture</span><span class="t">Capture a page whole, fingerprinted and timestamped.</span></a></li>
+<li><a href="./accessibility-auditor.html">
+      <span class="n">Accessibility Auditor</span><span class="t">The six accessibility problems you can actually fix.</span></a></li>
+</ul>
+
+
+<div class="foot">
+  <p>Effective 17 July 2026. Questions, or a correction: <a href="mailto:shaunpeh@gmail.com">shaunpeh@gmail.com</a>.</p>
+  <p>These pages are generated from a single facts file kept beside the extensions’ source, so they cannot drift from the code. Both are public: <a href="https://github.com/shaunpeh/project-x-privacy">github.com/shaunpeh/project-x-privacy</a>.</p>
+  <p><a href="./">All privacy policies</a></p>
+</div>
+
+</div></body>
+</html>

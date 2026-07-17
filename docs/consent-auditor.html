@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consent Auditor — Privacy Policy</title>
+<style>
+:root {
+  --paper:#DCE0DE; --surface:#FFFFFF; --ink:#15191A; --muted:#6B7371;
+  --rule:#C2C8C5; --signal:#1F5F4B; --alert:#9B2C1E;
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --ui: system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#0D1011; --surface:#171B1C; --ink:#E4E9E7; --muted:#8B9491;
+          --rule:#2C3335; --signal:#58A88C; --alert:#D2705E; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--ui);
+       line-height:1.6; padding: clamp(24px,5vw,64px) clamp(16px,4vw,32px) 64px; }
+.wrap { max-width: 720px; margin:0 auto; }
+a { color: var(--ink); text-underline-offset: 2px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+           text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+h1 { font-family:var(--serif); font-weight:400; font-size:clamp(30px,5vw,44px);
+     line-height:1.08; letter-spacing:-.015em; margin:0 0 6px; text-wrap:balance; }
+.tagline { margin:0 0 28px; color:var(--muted); font-size:15px; }
+h2 { font-family:var(--serif); font-weight:400; font-size:22px; margin:34px 0 10px;
+     padding-top:20px; border-top:1px solid var(--rule); }
+h2:first-of-type { border-top:0; padding-top:0; }
+p, li { font-size:15px; }
+ul { padding-left:20px; }
+li { margin-bottom:7px; }
+code { font-family:var(--mono); font-size:.88em; background:var(--surface);
+       padding:1px 4px; border-radius:3px; }
+@media (prefers-color-scheme: dark) { code { background:#22282A; } }
+.headline { border:1px solid var(--signal); color:var(--signal); padding:14px 16px;
+            border-radius:2px; margin:0 0 28px; font-size:15px; }
+.headline strong { font-weight:600; }
+.warn { border-left:3px solid var(--alert); padding:2px 0 2px 16px; margin:16px 0; }
+.warn h3 { margin:0 0 6px; font-size:15px; }
+table { width:100%; border-collapse:collapse; margin:10px 0; }
+th, td { text-align:left; padding:8px 10px 8px 0; border-bottom:1px solid var(--rule);
+         vertical-align:top; font-size:14px; }
+th { font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+     color:var(--muted); font-weight:400; }
+td:first-child { font-family:var(--mono); font-size:12px; white-space:nowrap; padding-right:16px; }
+.foot { margin-top:44px; padding-top:20px; border-top:1px solid var(--rule);
+        font-size:13px; color:var(--muted); }
+.index-list { list-style:none; padding:0; margin:24px 0 0; }
+.index-list li { margin:0; border-top:1px solid var(--rule); }
+.index-list a { display:flex; justify-content:space-between; gap:16px; align-items:baseline;
+                padding:12px 0; text-decoration:none; }
+.index-list a:hover .n { text-decoration:underline; }
+.n { font-size:16px; }
+.t { color:var(--muted); font-size:13px; text-align:right; }
+</style>
+</head>
+<body><div class="wrap">
+<p class="eyebrow">Privacy policy</p>
+<h1>Consent Auditor</h1>
+<p class="tagline">See which third parties a page contacts before anyone agrees to anything.</p>
+<div class="headline">
+      <strong>This extension makes no network requests at all.</strong>
+      Nothing you do with it leaves your computer, because there is nowhere for it to go.
+    </div>
+<h2>What it keeps</h2>
+<ul><li>For pages you visit while it is enabled: the page address, and the list of addresses that page requested — which is the audit itself.</li>
+<li>The page address is stored in full, including any query string, because an auditor needs to know exactly which page produced a finding.</li>
+<li>It records what the page loaded. It does not record page content, form input, or anything you typed.</li></ul>
+<p>Anything saved is kept in your browser’s own extension storage on this device, using chrome.storage.local.</p>
+<h2>What leaves your computer</h2>
+<p><strong>Nothing.</strong> The extension contains no analytics, no telemetry, no advertising and no tracking of any kind. Nothing is sold, rented or shared. There is no third party to share it with.</p>
+<h2>Permissions, and why each one</h2>
+<table><thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead><tbody><tr><td>storage</td><td>To keep audits on this device.</td></tr>
+<tr><td>&lt;all_urls&gt;</td><td>The whole point is to see what a page does <em>before</em> you touch it, which means being present from the moment it starts loading. Nothing to click, because a click is the thing being measured.</td></tr></tbody></table>
+<p>This is a professional auditing tool. It observes what pages request, using timing information the browser already collects. It does not intercept, block or modify traffic.</p>
+<h2>Your data, your machine</h2>
+<p>There is no account, no sign-up and no login. Uninstalling the extension deletes everything it stored. You can also clear it yourself from the extension’s options at any time.</p>
+<p>Because nothing is transmitted, there is no copy of anything on any server for us to hand over, lose, or be asked for. That is a deliberate design choice, not an oversight.</p>
+<h2>Paid features</h2>
+<p>There are none today — every feature is free, and no payment code runs. If a paid tier is added later, payment would be handled by ExtensionPay and Stripe, who would receive your email and payment details directly. This page will be updated before that happens, not after.</p>
+<h2>Children</h2>
+<p>This extension is a professional tool and is not directed at children. It collects nothing from anyone, of any age.</p>
+<h2>Changes</h2>
+<p>If what the extension does changes, this page changes first. Every claim here is generated from a single facts file that is kept beside the code, so the two cannot quietly drift apart. The history of this page is public in the repository linked below.</p>
+
+<div class="foot">
+  <p>Effective 17 July 2026. Questions, or a correction: <a href="mailto:shaunpeh@gmail.com">shaunpeh@gmail.com</a>.</p>
+  
+  <p><a href="./">All privacy policies</a></p>
+</div>
+</div></body>
+</html>
