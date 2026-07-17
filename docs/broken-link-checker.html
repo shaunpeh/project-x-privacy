@@ -75,7 +75,7 @@ td:first-child { font-family:var(--mono); font-size:12px; white-space:nowrap; pa
 <h2>Permissions, and why each one</h2>
 <table><thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead><tbody><tr><td>activeTab</td><td>To read the list of links on the page you are looking at, and only when you click Scan.</td></tr>
 <tr><td>scripting</td><td>To run the small function that collects those links from the page.</td></tr>
-<tr><td>storage</td><td>Used by the shared extension framework. This tool saves nothing.</td></tr>
+<tr><td>storage</td><td>Declared by the shared template all these extensions are built from, and <strong>not used by this one</strong> — it writes nothing to it. It should not be requested at all, and will be removed.</td></tr>
 <tr><td>&lt;all_urls&gt; (optional)</td><td>Requested at the moment you click Scan, never at install. Testing a link means contacting the site it points at, and those sites can be anywhere — so the permission has to cover any address. If you decline, nothing is scanned.</td></tr></tbody></table>
 <h2>Your data, your machine</h2>
 <p>There is no account, no sign-up and no login. Uninstalling the extension deletes everything it stored. You can also clear it yourself from the extension’s options at any time.</p>

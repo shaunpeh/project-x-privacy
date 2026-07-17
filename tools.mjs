@@ -39,7 +39,7 @@ export const TOOLS = [
     permissions: [
       ['activeTab', 'To read the list of links on the page you are looking at, and only when you click Scan.'],
       ['scripting', 'To run the small function that collects those links from the page.'],
-      ['storage', 'Used by the shared extension framework. This tool saves nothing.'],
+      ['storage', 'Declared by the shared template all these extensions are built from, and <strong>not used by this one</strong> — it writes nothing to it. It should not be requested at all, and will be removed.'],
       ['&lt;all_urls&gt; (optional)', 'Requested at the moment you click Scan, never at install. Testing a link means contacting the site it points at, and those sites can be anywhere — so the permission has to cover any address. If you decline, nothing is scanned.'],
     ],
   },
@@ -154,7 +154,7 @@ export const TOOLS = [
     permissions: [
       ['activeTab', 'To read which fonts the page loaded, and only when you click Check.'],
       ['scripting', 'To run the function that collects them.'],
-      ['storage', 'Used by the shared extension framework. This tool saves nothing.'],
+      ['storage', 'Declared by the shared template all these extensions are built from, and <strong>not used by this one</strong> — it writes nothing to it. It should not be requested at all, and will be removed.'],
     ],
     note: 'The database of foundries and licence types ships inside the extension. Nothing is looked up online, so no one learns which sites you audited.',
   },
@@ -183,7 +183,7 @@ export const TOOLS = [
     permissions: [
       ['activeTab', 'To examine the page you are looking at, and only when you click Check.'],
       ['scripting', 'To run the checks inside the page.'],
-      ['storage', 'Used by the shared extension framework. This tool saves nothing.'],
+      ['storage', 'Declared by the shared template all these extensions are built from, and <strong>not used by this one</strong> — it writes nothing to it. It should not be requested at all, and will be removed.'],
     ],
   },
 ];
