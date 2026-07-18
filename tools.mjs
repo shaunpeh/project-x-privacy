@@ -25,7 +25,9 @@ export const TOOLS = [
     slug: 'broken-link-checker',
     name: 'Broken Link Checker',
     tagline: 'Find dead links on any page in one click.',
-    stores: null,
+    stores: [
+      'A single yes/no flag recording that you have seen the one-time introduction, so it does not reopen. Nothing else is kept.',
+    ],
     // The one tool in the portfolio that necessarily reaches the network.
     network: {
       does: true,
@@ -39,7 +41,7 @@ export const TOOLS = [
     permissions: [
       ['activeTab', 'To read the list of links on the page you are looking at, and only when you click Scan.'],
       ['scripting', 'To run the small function that collects those links from the page.'],
-      ['storage', 'Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.'],
+      ['storage', 'Two uses. First, a one-time flag recording that you have seen the introduction — written the first time you open the popup, so the walkthrough does not reopen. That is the only thing this free version writes to your device. Second, if a paid tier is ever turned on, your subscription state via <a href="https://extensionpay.com">ExtensionPay</a> (not active today). Nothing else.'],
       ['&lt;all_urls&gt; (optional)', 'Requested at the moment you click Scan, never at install. Testing a link means contacting the site it points at, and those sites can be anywhere — so the permission has to cover any address. If you decline, nothing is scanned.'],
     ],
   },
@@ -140,7 +142,7 @@ export const TOOLS = [
     ],
     network: { does: false },
     permissions: [
-      ['storage', 'To keep audits on this device.'],
+      ['storage', 'To keep audits on this device, and a one-time flag recording that you have seen the introduction.'],
       ['&lt;all_urls&gt;', 'The whole point is to see what a page does <em>before</em> you touch it, which means being present from the moment it starts loading. Nothing to click, because a click is the thing being measured.'],
     ],
     note: 'This is a professional auditing tool. It observes what pages request, using timing information the browser already collects. It does not intercept, block or modify traffic.',
@@ -149,12 +151,14 @@ export const TOOLS = [
     slug: 'font-licence-auditor',
     name: 'Font Licence Auditor',
     tagline: 'Which foundry owns the fonts on this page.',
-    stores: null,
+    stores: [
+      'A single yes/no flag recording that you have seen the one-time introduction, so it does not reopen. Nothing else is kept.',
+    ],
     network: { does: false },
     permissions: [
       ['activeTab', 'To read which fonts the page loaded, and only when you click Check.'],
       ['scripting', 'To run the function that collects them.'],
-      ['storage', 'Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.'],
+      ['storage', 'Two uses. First, a one-time flag recording that you have seen the introduction — written the first time you open the popup, so the walkthrough does not reopen. That is the only thing this free version writes to your device. Second, if a paid tier is ever turned on, your subscription state via <a href="https://extensionpay.com">ExtensionPay</a> (not active today). Nothing else.'],
     ],
     note: 'The database of foundries and licence types ships inside the extension. Nothing is looked up online, so no one learns which sites you audited.',
   },
@@ -178,12 +182,14 @@ export const TOOLS = [
     slug: 'accessibility-auditor',
     name: 'Accessibility Auditor',
     tagline: 'The six accessibility problems you can actually fix.',
-    stores: null,
+    stores: [
+      'A single yes/no flag recording that you have seen the one-time introduction, so it does not reopen. Nothing else is kept.',
+    ],
     network: { does: false },
     permissions: [
       ['activeTab', 'To examine the page you are looking at, and only when you click Check.'],
       ['scripting', 'To run the checks inside the page.'],
-      ['storage', 'Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.'],
+      ['storage', 'Two uses. First, a one-time flag recording that you have seen the introduction — written the first time you open the popup, so the walkthrough does not reopen. That is the only thing this free version writes to your device. Second, if a paid tier is ever turned on, your subscription state via <a href="https://extensionpay.com">ExtensionPay</a> (not active today). Nothing else.'],
     ],
   },
   {

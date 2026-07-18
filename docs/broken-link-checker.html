@@ -66,7 +66,8 @@ td:first-child { font-family:var(--mono); font-size:12px; white-space:nowrap; pa
       It does contact the websites you ask it to check, which is how it works. Details below.
     </div>
 <h2>What it keeps</h2>
-<p><strong>Nothing.</strong> This tool stores no data whatsoever. It looks at the page when you ask it to, shows you the answer, and forgets it when you close the popup.</p>
+<ul><li>A single yes/no flag recording that you have seen the one-time introduction, so it does not reopen. Nothing else is kept.</li></ul>
+<p>Anything saved is kept in your browser’s own extension storage on this device, using chrome.storage.local.</p>
 <h2>What leaves your computer</h2>
 <p>When you click Scan, the extension sends a request to every link on the page to find out whether it still works. There is no other way to tell a live link from a dead one.</p>
 <p>Those requests go directly from your browser to each linked site, exactly as if you had clicked the link yourself. That means each of those sites can see your IP address and that something requested the page.</p>
@@ -75,7 +76,7 @@ td:first-child { font-family:var(--mono); font-size:12px; white-space:nowrap; pa
 <h2>Permissions, and why each one</h2>
 <table><thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead><tbody><tr><td>activeTab</td><td>To read the list of links on the page you are looking at, and only when you click Scan.</td></tr>
 <tr><td>scripting</td><td>To run the small function that collects those links from the page.</td></tr>
-<tr><td>storage</td><td>Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.</td></tr>
+<tr><td>storage</td><td>Two uses. First, a one-time flag recording that you have seen the introduction — written the first time you open the popup, so the walkthrough does not reopen. That is the only thing this free version writes to your device. Second, if a paid tier is ever turned on, your subscription state via <a href="https://extensionpay.com">ExtensionPay</a> (not active today). Nothing else.</td></tr>
 <tr><td>&lt;all_urls&gt; (optional)</td><td>Requested at the moment you click Scan, never at install. Testing a link means contacting the site it points at, and those sites can be anywhere — so the permission has to cover any address. If you decline, nothing is scanned.</td></tr></tbody></table>
 <h2>Your data, your machine</h2>
 <p>There is no account, no sign-up and no login. Uninstalling the extension deletes everything it stored. You can also clear it yourself from the extension’s options at any time.</p>
