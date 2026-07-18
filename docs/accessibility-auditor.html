@@ -72,7 +72,7 @@ td:first-child { font-family:var(--mono); font-size:12px; white-space:nowrap; pa
 <h2>Permissions, and why each one</h2>
 <table><thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead><tbody><tr><td>activeTab</td><td>To examine the page you are looking at, and only when you click Check.</td></tr>
 <tr><td>scripting</td><td>To run the checks inside the page.</td></tr>
-<tr><td>storage</td><td>Declared by the shared template all these extensions are built from, and <strong>not used by this one</strong> — it writes nothing to it. It should not be requested at all, and will be removed.</td></tr></tbody></table>
+<tr><td>storage</td><td>Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.</td></tr></tbody></table>
 <h2>Your data, your machine</h2>
 <p>There is no account, no sign-up and no login. Uninstalling the extension deletes everything it stored. You can also clear it yourself from the extension’s options at any time.</p>
 <p>Because nothing is transmitted, there is no copy of anything on any server for us to hand over, lose, or be asked for. That is a deliberate design choice, not an oversight.</p>

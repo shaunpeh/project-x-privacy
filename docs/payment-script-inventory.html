@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Broken Link Checker — Privacy Policy</title>
+<title>Payment Page Script Inventory — Privacy Policy</title>
 <style>
 :root {
   --paper:#DCE0DE; --surface:#FFFFFF; --ink:#15191A; --muted:#6B7371;
@@ -59,24 +59,26 @@ td:first-child { font-family:var(--mono); font-size:12px; white-space:nowrap; pa
 </head>
 <body><div class="wrap">
 <p class="eyebrow">Privacy policy</p>
-<h1>Broken Link Checker</h1>
-<p class="tagline">Find dead links on any page in one click.</p>
+<h1>Payment Page Script Inventory</h1>
+<p class="tagline">Inventory every script on your payment page, with a justification for each.</p>
 <div class="headline">
       <strong>This extension sends no data to us — we have no server.</strong>
       It does contact the websites you ask it to check, which is how it works. Details below.
     </div>
 <h2>What it keeps</h2>
-<p><strong>Nothing.</strong> This tool stores no data whatsoever. It looks at the page when you ask it to, shows you the answer, and forgets it when you close the popup.</p>
+<ul><li>A baseline of the scripts found on a page: each script’s address and its SHA-256 fingerprint. It is saved only when you export, so that a later scan can tell you what has changed since.</li></ul>
+<p>Anything saved is kept in your browser’s own extension storage on this device, using chrome.storage.local.</p>
 <h2>What leaves your computer</h2>
-<p>When you click Scan, the extension sends a request to every link on the page to find out whether it still works. There is no other way to tell a live link from a dead one.</p>
-<p>Those requests go directly from your browser to each linked site, exactly as if you had clicked the link yourself. That means each of those sites can see your IP address and that something requested the page.</p>
+<p>When you click Scan, the extension fetches each script the page loaded, so it can compute a SHA-256 fingerprint of the exact code. There is no other way to verify that a script has not been altered.</p>
+<p>Those requests go directly from your browser to wherever each script is hosted, exactly as the page itself loaded them. Each of those hosts can see your IP address, as they already did when the page loaded.</p>
 <p>Nothing is sent to us, or to any server of ours. We do not have one.</p>
-<p>The results are shown in the popup and are gone when you close it.</p>
+<p>The inventory is shown in the popup. When you export, a CSV file is saved to your Downloads folder, on your own disk.</p>
 <h2>Permissions, and why each one</h2>
-<table><thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead><tbody><tr><td>activeTab</td><td>To read the list of links on the page you are looking at, and only when you click Scan.</td></tr>
-<tr><td>scripting</td><td>To run the small function that collects those links from the page.</td></tr>
-<tr><td>storage</td><td>Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.</td></tr>
-<tr><td>&lt;all_urls&gt; (optional)</td><td>Requested at the moment you click Scan, never at install. Testing a link means contacting the site it points at, and those sites can be anywhere — so the permission has to cover any address. If you decline, nothing is scanned.</td></tr></tbody></table>
+<table><thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead><tbody><tr><td>activeTab</td><td>To read the scripts on the page you are looking at, and only when you click Scan.</td></tr>
+<tr><td>scripting</td><td>To run the small function that collects them from the page.</td></tr>
+<tr><td>storage</td><td>To keep the baseline you export, so a later scan can detect changes — and, if a paid tier is ever turned on, your subscription state via <a href="https://extensionpay.com">ExtensionPay</a>.</td></tr>
+<tr><td>&lt;all_urls&gt; (optional)</td><td>Requested at the moment you click Scan, never at install. Fingerprinting a script means fetching it from wherever it is hosted, and those hosts can be anywhere — so the permission has to cover any address. If you decline, the scripts are still listed, but they cannot be fingerprinted.</td></tr></tbody></table>
+<p>The database of script vendors and their draft justifications ships inside the extension; the fingerprinting happens in your browser. This tool produces the inventory PCI DSS 6.4.3 asks for. It never states that you are compliant — that is your assessor’s judgement, not ours.</p>
 <h2>Your data, your machine</h2>
 <p>There is no account, no sign-up and no login. Uninstalling the extension deletes everything it stored. You can also clear it yourself from the extension’s options at any time.</p>
 <p>Because nothing is transmitted, there is no copy of anything on any server for us to hand over, lose, or be asked for. That is a deliberate design choice, not an oversight.</p>

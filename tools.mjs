@@ -39,7 +39,7 @@ export const TOOLS = [
     permissions: [
       ['activeTab', 'To read the list of links on the page you are looking at, and only when you click Scan.'],
       ['scripting', 'To run the small function that collects those links from the page.'],
-      ['storage', 'Declared by the shared template all these extensions are built from, and <strong>not used by this one</strong> — it writes nothing to it. It should not be requested at all, and will be removed.'],
+      ['storage', 'Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.'],
       ['&lt;all_urls&gt; (optional)', 'Requested at the moment you click Scan, never at install. Testing a link means contacting the site it points at, and those sites can be anywhere — so the permission has to cover any address. If you decline, nothing is scanned.'],
     ],
   },
@@ -154,7 +154,7 @@ export const TOOLS = [
     permissions: [
       ['activeTab', 'To read which fonts the page loaded, and only when you click Check.'],
       ['scripting', 'To run the function that collects them.'],
-      ['storage', 'Declared by the shared template all these extensions are built from, and <strong>not used by this one</strong> — it writes nothing to it. It should not be requested at all, and will be removed.'],
+      ['storage', 'Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.'],
     ],
     note: 'The database of foundries and licence types ships inside the extension. Nothing is looked up online, so no one learns which sites you audited.',
   },
@@ -183,7 +183,33 @@ export const TOOLS = [
     permissions: [
       ['activeTab', 'To examine the page you are looking at, and only when you click Check.'],
       ['scripting', 'To run the checks inside the page.'],
-      ['storage', 'Declared by the shared template all these extensions are built from, and <strong>not used by this one</strong> — it writes nothing to it. It should not be requested at all, and will be removed.'],
+      ['storage', 'Declared for the subscription feature, which is built on <a href="https://extensionpay.com">ExtensionPay</a>. The current free version does not activate it, so nothing is written to your device today. If a paid tier is ever turned on, ExtensionPay uses this to remember your subscription on this device — nothing else.'],
     ],
+  },
+  {
+    slug: 'payment-script-inventory',
+    name: 'Payment Page Script Inventory',
+    tagline: 'Inventory every script on your payment page, with a justification for each.',
+    stores: [
+      'A baseline of the scripts found on a page: each script’s address and its SHA-256 fingerprint. It is saved only when you export, so that a later scan can tell you what has changed since.',
+    ],
+    // Like Broken Link Checker, this one necessarily reaches the network — it
+    // must fetch each script to fingerprint it.
+    network: {
+      does: true,
+      what: [
+        'When you click Scan, the extension fetches each script the page loaded, so it can compute a SHA-256 fingerprint of the exact code. There is no other way to verify that a script has not been altered.',
+        'Those requests go directly from your browser to wherever each script is hosted, exactly as the page itself loaded them. Each of those hosts can see your IP address, as they already did when the page loaded.',
+        'Nothing is sent to us, or to any server of ours. We do not have one.',
+        'The inventory is shown in the popup. When you export, a CSV file is saved to your Downloads folder, on your own disk.',
+      ],
+    },
+    permissions: [
+      ['activeTab', 'To read the scripts on the page you are looking at, and only when you click Scan.'],
+      ['scripting', 'To run the small function that collects them from the page.'],
+      ['storage', 'To keep the baseline you export, so a later scan can detect changes — and, if a paid tier is ever turned on, your subscription state via <a href="https://extensionpay.com">ExtensionPay</a>.'],
+      ['&lt;all_urls&gt; (optional)', 'Requested at the moment you click Scan, never at install. Fingerprinting a script means fetching it from wherever it is hosted, and those hosts can be anywhere — so the permission has to cover any address. If you decline, the scripts are still listed, but they cannot be fingerprinted.'],
+    ],
+    note: 'The database of script vendors and their draft justifications ships inside the extension; the fingerprinting happens in your browser. This tool produces the inventory PCI DSS 6.4.3 asks for. It never states that you are compliant — that is your assessor’s judgement, not ours.',
   },
 ];
