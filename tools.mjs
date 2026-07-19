@@ -206,15 +206,16 @@ export const TOOLS = [
       what: [
         'When you click Scan, the extension fetches each script the page loaded, so it can compute a SHA-256 fingerprint of the exact code. There is no other way to verify that a script has not been altered.',
         'Those requests go directly from your browser to wherever each script is hosted, exactly as the page itself loaded them. Each of those hosts can see your IP address, as they already did when the page loaded.',
-        'Nothing is sent to us, or to any server of ours. We do not have one.',
+        'Nothing about your pages or scans is sent to us, or to any server of ours — we do not have one. The one exception is billing: to run your free trial and subscription, the extension contacts ExtensionPay (extensionpay.com) to read and update your subscription state, and payment itself happens on ExtensionPay and Stripe pages. Your card details go to Stripe, never to us and never through this extension.',
         'The inventory is shown in the popup. When you export, a CSV file is saved to your Downloads folder, on your own disk.',
       ],
     },
     permissions: [
       ['activeTab', 'To read the scripts on the page you are looking at, and only when you click Scan.'],
       ['scripting', 'To run the small function that collects them from the page.'],
-      ['storage', 'To keep the baseline you export, so a later scan can detect changes — and, if a paid tier is ever turned on, your subscription state via <a href="https://extensionpay.com">ExtensionPay</a>.'],
+      ['storage', 'To keep the baseline you export, so a later scan can detect changes — and your subscription and free-trial state via <a href="https://extensionpay.com">ExtensionPay</a>.'],
       ['&lt;all_urls&gt; (optional)', 'Requested at the moment you click Scan, never at install. Fingerprinting a script means fetching it from wherever it is hosted, and those hosts can be anywhere — so the permission has to cover any address. If you decline, the scripts are still listed, but they cannot be fingerprinted.'],
+      ['ExtensionPay (extensionpay.com)', 'Payments run through <a href="https://extensionpay.com">ExtensionPay</a> and Stripe. A background worker and a content script that runs <em>only</em> on extensionpay.com manage your free trial and subscription and unlock Pro after you pay. This appears at install as “read and change your data on extensionpay.com.” It runs on no other site, and no card details pass through this extension.'],
     ],
     note: 'The database of script vendors and their draft justifications ships inside the extension; the fingerprinting happens in your browser. This tool produces the inventory PCI DSS 6.4.3 asks for. It never states that you are compliant — that is your assessor’s judgement, not ours.',
   },
